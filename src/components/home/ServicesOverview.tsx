@@ -7,6 +7,11 @@ import Reveal from "@/components/ui/Reveal";
 import { services } from "@/data/services";
 
 export default function ServicesOverview() {
+  const homepageServices = services.filter(
+    (service) =>
+      !["fashion-shoots", "brand-content", "commercial-films"].includes(service.slug)
+  );
+
   return (
     <section className="section bg-paper">
       <Container>
@@ -19,7 +24,7 @@ export default function ServicesOverview() {
         </Reveal>
 
         <div className="mt-14 grid gap-px overflow-hidden bg-ink/10 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map((service) => {
+          {homepageServices.map((service) => {
             const Icon = service.icon;
             return (
               <article key={service.slug} className="group relative flex flex-col bg-ivory">
