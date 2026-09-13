@@ -14,9 +14,9 @@ export interface Service {
 export const services: Service[] = [
   {
     slug: "corporate-events",
-    title: "Wedding Videography",
+    title: "Wedding Photography",
     icon: Camera,
-    image: "/images/services/wedding-photography.svg",
+    image: "/images/services/wedding-photography.jpeg",
     shortDescription:
       "Polished coverage for conferences, launches, team days and brand experiences.",
     description:
@@ -30,7 +30,7 @@ export const services: Service[] = [
     ],
   },
   {
-    slug: "product-shoots",
+    slug: "wedding-videography",
     title: "Wedding Videography",
     icon: Clapperboard,
     image: "/images/services/wedding-videography.svg",

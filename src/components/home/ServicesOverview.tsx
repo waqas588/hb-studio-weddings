@@ -29,23 +29,16 @@ export default function ServicesOverview() {
             return (
               <article key={service.slug} className="group relative flex flex-col bg-ivory">
                 <div className="relative aspect-[4/3] overflow-hidden">
-                  {service.slug === "corporate-events" || service.slug === "product-shoots" ? (
+                  {service.slug === "wedding-videography" ? (
                     <video
                       className="h-full w-full object-cover"
                       controls
                       muted
                       playsInline
                       preload="metadata"
-                      aria-label="HB Studio wedding photography and event film"
+                      aria-label="HB Studio wedding videography film"
                     >
-                      <source
-                        src={
-                          service.slug === "corporate-events"
-                            ? "/videos/wedding-photography-promo.mp4"
-                            : "/videos/wedding-event-promo.mp4"
-                        }
-                        type="video/mp4"
-                      />
+                      <source src="/videos/wedding-event-promo.mp4" type="video/mp4" />
                       Your browser does not support the video tag.
                     </video>
                   ) : (
