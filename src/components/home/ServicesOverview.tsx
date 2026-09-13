@@ -18,8 +18,8 @@ export default function ServicesOverview() {
         <Reveal>
           <SectionHeading
             kicker="What We Offer"
-            title="Visuals With A Point Of View"
-            description="From high-energy corporate events to tactile product and fashion campaigns, each service is built around the way your audience sees you."
+            title="Photography & Films With Feeling"
+            description="From intimate portraits to the full energy of your celebration, we create work that lets you return to how it felt."
           />
         </Reveal>
 

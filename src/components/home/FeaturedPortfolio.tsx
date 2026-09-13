@@ -11,8 +11,9 @@ export default function FeaturedPortfolio() {
       <Container>
         <Reveal className="mb-14 flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end">
           <SectionHeading
-            title="Recent Work"
-            description="A selection of wedding photography and fashion shoots from recent shoots."
+            kicker="Our Work"
+            title="Frames That Hold A Feeling"
+            description="A selection of wedding photography made to keep the atmosphere, emotion and details of your day close."
           />
           <Button href="/portfolio" variant="ghost" className="shrink-0">
             View Full Portfolio

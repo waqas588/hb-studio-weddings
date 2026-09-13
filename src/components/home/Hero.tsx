@@ -28,7 +28,7 @@ export default function Hero() {
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           className="text-xs tracking-widest2 text-gold-light"
         >
-          HB STUDIO / VISUAL PRODUCTION
+          WELCOME TO HB STUDIO WEDDINGS
         </motion.p>
 
         <motion.h1
@@ -37,9 +37,9 @@ export default function Hero() {
           transition={{ duration: 0.9, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
           className="mt-5 max-w-3xl font-display text-5xl italic leading-[1.1] text-ivory sm:text-6xl md:text-7xl"
         >
-          Make the Work
+          Stories Worth
           <br />
-          Impossible to Ignore.
+          Reliving.
         </motion.h1>
 
         <motion.p
@@ -48,8 +48,8 @@ export default function Hero() {
           transition={{ duration: 0.9, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
           className="mt-6 max-w-xl text-base leading-relaxed text-ivory/80 sm:text-lg"
         >
-          Photography and cinematic films for brands, corporate events,
-          products and fashion with a point of view.
+          Wedding photography and cinematic films crafted with a quiet,
+          editorial eye for the moments that matter most.
         </motion.p>
 
         <motion.div
