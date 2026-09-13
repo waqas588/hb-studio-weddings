@@ -1,5 +1,6 @@
 import type { LucideIcon } from "lucide-react";
-import { Camera, Clapperboard, Heart, Sparkles, Users } from "lucide-react";
+
+import { Camera, Clapperboard, Sparkles, Users } from "lucide-react";
 
 export interface Service {
   slug: string;
@@ -18,80 +19,69 @@ export const services: Service[] = [
     icon: Camera,
     image: "/images/services/wedding-photography.jpeg",
     shortDescription:
-      "Polished coverage for conferences, launches, team days and brand experiences.",
+      "Beautiful photography that captures every important moment of your wedding day.",
     description:
-      "We capture the energy, people and details that make an event matter, from keynote rooms to the moments happening between sessions.",
+      "We capture the emotions, people and details that make your wedding unforgettable.",
     included: [
-      "Pre-event planning and run-of-show review",
-      "Candid and directed coverage of key moments",
-      "Fast-turnaround selects for social and press",
-      "Professionally edited, color-graded final gallery",
-      "Private online gallery for viewing and downloading",
+      "Pre-event planning",
+      "Candid and directed photography",
+      "Professional photo editing",
+      "Color-graded final gallery",
+      "Private online gallery",
     ],
   },
+
   {
     slug: "wedding-videography",
     title: "Wedding Videography",
     icon: Clapperboard,
     image: "/images/services/wedding-videography.svg",
     shortDescription:
-      "Clean, tactile stills and motion that make your product impossible to scroll past.",
+      "Cinematic wedding films that bring your most meaningful moments back to life.",
     description:
-      "We shape light, texture and composition around what makes your product different, creating a focused image library for campaigns, ecommerce and launch content.",
+      "We create beautiful wedding films with natural moments, emotional storytelling and cinematic editing.",
     included: [
-      "Creative direction and shot list",
-      "Studio or on-location production",
-      "Hero stills and detail photography",
-      "Color-graded, professionally edited film",
-      "Digital delivery in shareable formats",
+      "Creative planning",
+      "Wedding day filming",
+      "Cinematic camera work",
+      "Professional video editing",
+      "Digital delivery",
     ],
   },
-  {
-    slug: "fashion-shoots",
-    title: "Fashion Shoots",
-    icon: Heart,
-    image: "/images/services/engagement-sessions.svg",
-    shortDescription:
-      "Editorial imagery for collections, lookbooks, campaigns and personal brands.",
-    description:
-      "From casting and styling through the final frame, we create a confident visual language that gives your collection room to speak.",
-    included: [
-      "Moodboard and creative direction",
-      "Location, lighting and posing guidance",
-      "A mix of campaign and editorial frames",
-      "Professionally edited final gallery",
-    ],
-  },
+
   {
     slug: "brand-content",
-    title: "Brand Content",
+    title: "Bridal Photography",
     icon: Sparkles,
     image: "/images/services/bridal-photography.svg",
     shortDescription:
-      "A considered library of images for your website, social channels and launch moments.",
+      "Elegant bridal portraits created with beautiful light, detail and timeless style.",
     description:
-      "We turn a clear brand idea into a flexible set of visual assets, balancing hero images with the small details that make a brand feel real.",
+      "We create elegant bridal portraits that highlight every detail and emotion of your special day.",
     included: [
-      "Creative concept and shot planning",
-      "Portrait, product and behind-the-scenes coverage",
-      "Studio or on-location options",
-      "Professionally edited final gallery",
+      "Creative direction",
+      "Bridal portraits",
+      "Detail photography",
+      "Professional editing",
+      "High-resolution gallery",
     ],
   },
+
   {
     slug: "commercial-films",
-    title: "Commercial Films",
+    title: "Event Coverage",
     icon: Users,
     image: "/images/services/event-coverage.svg",
     shortDescription:
-      "Short films and motion content with atmosphere, pace and a clear message.",
+      "Complete coverage of your wedding events, celebrations and special moments.",
     description:
-      "For launches, campaigns and events, we combine natural sound, considered camera work and purposeful editing to make your message land.",
+      "From intimate gatherings to large celebrations, we capture the moments you will remember forever.",
     included: [
-      "Creative treatment and production planning",
-      "Multi-camera and natural audio capture",
-      "Photography and/or videography as needed",
-      "Professionally edited final gallery",
+      "Event planning",
+      "Candid coverage",
+      "Important moments",
+      "Professional editing",
+      "Online delivery",
     ],
   },
 ];

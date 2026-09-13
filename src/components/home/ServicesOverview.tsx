@@ -23,7 +23,7 @@ export default function ServicesOverview() {
           />
         </Reveal>
 
-        <div className="mt-14 grid gap-px overflow-hidden bg-ink/10 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-14 grid gap-px overflow-hidden bg-ink/10 sm:grid-cols-2 lg:grid-cols-2">
           {homepageServices.map((service) => {
             const Icon = service.icon;
             return (
