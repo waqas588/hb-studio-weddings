@@ -59,8 +59,8 @@ export const navLinks = [
   { href: "/portfolio", label: "Portfolio" },
   { href: "/services", label: "What We Do" },
   { href: "/about", label: "About" },
-  { href: "/packages", label: "Price" },
-  { href: "/contact", label: "Contact" },
+  { href: "/packages", label: "Packages" },
+  { href: "/contact", label: "Contact Us" },
 ] as const;
 
 export const legalLinks = [

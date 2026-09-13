@@ -14,6 +14,11 @@ export interface PackageTier {
   highlighted?: boolean;
 }
 
+export interface PackageAddOn {
+  name: string;
+  priceLabel: string;
+}
+
 export const packages: PackageTier[] = [
   {
     slug: "basic",
@@ -52,4 +57,13 @@ export const packages: PackageTier[] = [
       "RAW images (couple session, candids and family groups)",
     ],
   },
+];
+
+export const packageAddOns: PackageAddOn[] = [
+  { name: "Female Photographer", priceLabel: "PKR 15,000/=" },
+  { name: "Drone", priceLabel: "PKR 10,000/=" },
+  { name: "Male Photographer", priceLabel: "PKR 10,000/=" },
+  { name: "Female Videographer", priceLabel: "PKR 15,000/=" },
+  { name: "Album", priceLabel: "PKR 15,000/=" },
+  { name: "Male Videographer", priceLabel: "PKR 10,000/=" },
 ];
