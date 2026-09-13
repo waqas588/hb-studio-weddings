@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils";
 export const metadata: Metadata = {
   title: "Packages",
   description:
-    "Commercial photography and film package tiers from HB Studio. Request a custom quote for your next project.",
+  "Wedding photography and cinematography packages from HB Studio Weddings.",
   alternates: { canonical: "/packages" },
 };
 
@@ -20,7 +20,7 @@ export default function PackagesPage() {
         <SectionHeading
           kicker="Packages"
           title="Coverage Tiers"
-          description="Pricing is tailored to each project's scope, locations and deliverables. The structure below shows what's included at each tier; reach out for a quote specific to your brief."
+          description="Choose the package that fits your celebration and coverage needs."
         />
 
         <div className="mt-14 grid gap-8 lg:grid-cols-3">
@@ -34,7 +34,7 @@ export default function PackagesPage() {
             >
               {pkg.highlighted && (
                 <span className="mb-4 w-fit bg-gold-dark px-3 py-1 text-[10px] tracking-widest2 text-ivory">
-                  Most Requested
+                  Standard
                 </span>
               )}
               <h2 className="font-display text-2xl">{pkg.name}</h2>
@@ -79,17 +79,12 @@ export default function PackagesPage() {
                 variant={pkg.highlighted ? "secondary" : "ghost"}
                 className="mt-8"
               >
-                Request a Quote
+                Book Now
               </Button>
             </div>
           ))}
         </div>
 
-        <p className="mt-12 max-w-2xl text-sm text-charcoal/60">
-          Note: pricing has not yet been finalized for this site. All tiers
-          currently link to the booking form so a tailored quote can be
-          prepared once real pricing is provided.
-        </p>
       </Container>
     </div>
   );
