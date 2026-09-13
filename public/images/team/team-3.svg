@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="1000" viewBox="0 0 800 1000">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#5A4E3E"/>
+      <stop offset="100%" stop-color="#332B21"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="1000" fill="url(#g)"/>
+  <rect x="0.5" y="0.5" width="799" height="999" fill="none" stroke="#C9BCA8" stroke-opacity="0.35" stroke-width="1"/>
+  <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" font-family="Georgia, serif" font-size="36" fill="#F5F1EA" letter-spacing="2">TEAM MEMBER 3</text>
+  <text x="50%" y="550" text-anchor="middle" dominant-baseline="middle" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#C9BCA8" letter-spacing="3">PLACEHOLDER IMAGE — REPLACE</text>
+</svg>

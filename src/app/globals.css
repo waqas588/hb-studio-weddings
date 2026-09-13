@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-ivory text-charcoal antialiased;
+    font-feature-settings: "liga" 1, "kern" 1;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display text-ink;
+  }
+
+  ::selection {
+    @apply bg-gold/25 text-ink;
+  }
+
+  :focus-visible {
+    outline: 2px solid theme("colors.gold.DEFAULT");
+    outline-offset: 3px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  .section {
+    @apply py-20 sm:py-28;
+  }
+
+  .hairline {
+    @apply border-t border-ink/10;
+  }
+
+  .kicker {
+    @apply text-xs tracking-widest2 text-gold-dark;
+  }
+}
