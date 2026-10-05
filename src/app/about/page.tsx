@@ -69,10 +69,10 @@ export default function AboutPage() {
           <div className="mt-14 grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
             {team.slice(0, 1).map((member) => (
               <div key={member.name}>
-                <div className="relative aspect-[4/5] overflow-hidden bg-charcoal/5">
+                <div className="relative aspect-[2/3] overflow-hidden bg-charcoal/5">
                   <Image
                     src={member.image}
-                    alt={`Placeholder portrait for ${member.role}`}
+                    alt={`Portrait of the ${member.role}`}
                     fill
                     sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                     className="object-cover"

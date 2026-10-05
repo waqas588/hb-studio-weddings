@@ -16,7 +16,7 @@ export const team: TeamMember[] = [
     name: "Lead Photographer",
     role: "Founder & Lead Photographer",
     bio: "Bio to be supplied by the client — background, style and approach to wedding photography will appear here.",
-    image: "/images/team/IMG_3914.jpeg",
+    image: "/images/team/IMG_4745.JPG.jpeg",
     isPlaceholder: false,
   },
   {
