@@ -25,7 +25,12 @@ export default function ServicesPage() {
       </Container>
 
       <div className="mt-20">
-        {services.map((service, index) => {
+        {services
+          .filter(
+            (service) =>
+              service.title !== "Bridal Photography" && service.title !== "Event Coverage"
+          )
+          .map((service, index) => {
           const Icon = service.icon;
           const reversed = index % 2 === 1;
           return (
@@ -42,13 +47,27 @@ export default function ServicesPage() {
                   )}
                 >
                   <div className="relative aspect-[4/3] overflow-hidden bg-charcoal/5">
-                    <Image
-                      src={service.image}
-                      alt={`Placeholder photograph representing ${service.title}`}
-                      fill
-                      sizes="(min-width: 1024px) 50vw, 100vw"
-                      className="object-cover"
-                    />
+                    {service.slug === "wedding-videography" ? (
+                      <video
+                        className="h-full w-full object-cover"
+                        controls
+                        muted
+                        playsInline
+                        preload="metadata"
+                        aria-label="HB Studio wedding videography film"
+                      >
+                        <source src="/videos/wedding-event-promo.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                      </video>
+                    ) : (
+                      <Image
+                        src={service.image}
+                        alt={`Placeholder photograph representing ${service.title}`}
+                        fill
+                        sizes="(min-width: 1024px) 50vw, 100vw"
+                        className="object-cover"
+                      />
+                    )}
                   </div>
 
                   <div>
@@ -90,7 +109,7 @@ export default function ServicesPage() {
               </Container>
             </section>
           );
-        })}
+          })}
       </div>
     </div>
   );

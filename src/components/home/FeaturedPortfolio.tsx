@@ -20,7 +20,7 @@ export default function FeaturedPortfolio() {
           </Button>
         </Reveal>
 
-        <PortfolioGallery images={galleryImages} />
+        <PortfolioGallery images={galleryImages.filter((image) => image.featured)} />
       </Container>
     </section>
   );

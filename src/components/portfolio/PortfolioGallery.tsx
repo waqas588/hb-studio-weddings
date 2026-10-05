@@ -65,23 +65,22 @@ export default function PortfolioGallery({
         </div>
       )}
 
-      <ul className="columns-1 gap-4 sm:columns-2 lg:columns-3 [&>li]:mb-4">
+      <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {filtered.map((img, index) => (
-          <li key={img.id} className="break-inside-avoid">
+          <li key={img.id}>
             <button
               type="button"
               onClick={() => setLightboxIndex(index)}
-              className="group relative block w-full overflow-hidden bg-charcoal/5 focus-visible:outline-none"
+              className="group relative block aspect-[4/5] w-full overflow-hidden bg-charcoal/5 focus-visible:outline-none"
               aria-label={`Open image: ${img.alt}`}
             >
               <Image
                 src={img.src}
                 alt={img.alt}
-                width={img.width}
-                height={img.height}
+                fill
                 loading="lazy"
                 sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-                className="h-auto w-full object-cover transition-transform duration-700 ease-editorial group-hover:scale-[1.03]"
+                className="object-contain transition-transform duration-700 ease-editorial group-hover:scale-[1.02]"
               />
             </button>
           </li>

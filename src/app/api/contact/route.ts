@@ -66,10 +66,12 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ success: true });
   }
 
-  const resendApiKey = process.env.RESEND_API_KEY;
-  const recipient = process.env.CONTACT_FORM_TO_EMAIL ?? "handsomhabib@gmail.com";
+  const resendApiKey = process.env.RESEND_API_KEY?.trim();
+  const recipient =
+    process.env.CONTACT_FORM_TO_EMAIL?.trim() ||
+    process.env.NEXT_PUBLIC_CONTACT_EMAIL?.trim();
 
-  if (!resendApiKey) {
+  if (!resendApiKey || !recipient) {
     return NextResponse.json(
       {
         success: false,
@@ -79,32 +81,55 @@ export async function POST(request: NextRequest) {
     );
   }
 
-  const emailResponse = await fetch("https://api.resend.com/emails", {
-    method: "POST",
-    headers: {
-      Authorization: `Bearer ${resendApiKey}`,
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      from: "HB Studio Weddings <onboarding@resend.dev>",
-      to: [recipient],
-      reply_to: data.email,
-      subject: `New wedding inquiry from ${data.fullName}`,
-      text: [
-        `Name: ${data.fullName}`,
-        `Email: ${data.email}`,
-        `Phone / WhatsApp: ${data.phone}`,
-        `Wedding date: ${data.weddingDate}`,
-        "",
-        "Message:",
-        data.message || "No message provided.",
-      ].join("\n"),
-    }),
-  });
-
-  if (!emailResponse.ok) {
+  let emailResponse: Response;
+  try {
+    emailResponse = await fetch("https://api.resend.com/emails", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${resendApiKey}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        from:
+          process.env.CONTACT_FORM_FROM_EMAIL?.trim() ||
+          "HB Studio Weddings <onboarding@resend.dev>",
+        to: [recipient],
+        reply_to: data.email,
+        subject: `New wedding inquiry from ${data.fullName}`,
+        text: [
+          `Name: ${data.fullName}`,
+          `Email: ${data.email}`,
+          `Phone / WhatsApp: ${data.phone}`,
+          `Wedding date: ${data.weddingDate}`,
+          "",
+          "Message:",
+          data.message || "No message provided.",
+        ].join("\n"),
+      }),
+    });
+  } catch (error) {
+    console.error("[contact] Resend request failed:", error);
     return NextResponse.json(
       { success: false, message: "We could not send your inquiry. Please try again shortly." },
+      { status: 502 }
+    );
+  }
+
+  if (!emailResponse.ok) {
+    const providerError = (await emailResponse.json().catch(() => null)) as {
+      message?: string;
+    } | null;
+    console.error(
+      `[contact] Resend returned ${emailResponse.status}: ${providerError?.message ?? "unknown error"}`
+    );
+    const configurationError = [400, 401, 403].includes(emailResponse.status);
+    return NextResponse.json(
+      {
+        success: false,
+        message: configurationError
+          ? "Our email service is not available right now. Please contact us using the email or WhatsApp details on this page."
+          : "We could not send your inquiry. Please try again shortly.",
+      },
       { status: 502 }
     );
   }

@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
@@ -34,11 +35,19 @@ export default function Navbar() {
       <Container className="flex items-center justify-between">
         <Link
           href="/"
-          className={cn(
-            "font-display text-lg font-medium tracking-widest2 text-ivory transition-colors duration-300 hover:text-gold-light"
-          )}
+          aria-label="HB Studio Weddings home"
+          className="group ml-3 inline-flex items-center rounded-sm focus-visible:outline"
         >
-          HB STUDIO WEDDINGS
+          <span className="relative block h-[39px] w-[130px] shrink-0 overflow-hidden">
+            <Image
+              src="/images/about/LOGO%202026.png"
+              alt=""
+              width={243}
+              height={304}
+              priority
+              className="absolute left-[-60px] top-[-111px] max-w-none brightness-0 invert transition duration-300 group-hover:scale-105 group-hover:opacity-75 group-focus-visible:scale-105"
+            />
+          </span>
         </Link>
 
         <nav
